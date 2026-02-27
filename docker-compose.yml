@@ -1,0 +1,27 @@
+
+version: "3"
+
+services:
+  backend:
+    image: nikitamishra/crud-backend:latest   # <-- use Docker Hub image
+    ports:
+      - "8082:8080"
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/dd_db
+    depends_on:
+      - mongo
+
+  frontend:
+    image: nikitamishra/crud-frontend:latest # <-- use Docker Hub image
+    ports:
+      - "8081:80"
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
