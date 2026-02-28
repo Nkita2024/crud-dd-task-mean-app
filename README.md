@@ -26,4 +26,47 @@ You can modify the `src/app/services/tutorial.service.ts` file to adjust how the
 
 Navigate to `http://localhost:8081/`
 
-# test everything
+
+# CRUD Task MEAN App (Docker + CI/CD)
+
+This repository contains a full-stack CRUD application built with **MongoDB, Express, Angular, and Node.js**, containerized with Docker, orchestrated via Docker Compose, and fronted by Nginx. It includes CI/CD automation for reproducible builds and deployments.
+
+---
+
+## Features
+- **Frontend**: Angular SPA served via Nginx
+- **Backend**: Node.js + Express REST API
+- **Database**: MongoDB with auto-seeded sample data
+- **Reverse Proxy**: Nginx routing `/` → frontend, `/api/` → backend
+- **CI/CD**: GitHub Actions pipeline for build, push, and deploy
+
+---
+
+## Setup Instructions
+
+###  Clone the repository
+```bash
+git clone https://github.com/Nkita2024/crud-dd-task-mean-app.git
+cd crud-dd-task-mean-app
+
+---
+
+## Build and run with Docker Compose
+
+docker compose up -d
+
+##  Access the application
+
+- Frontend UI → http://localhost/
+- Backend API → http://localhost/api/tutorial
+
+##⚙️CI/CD Pipeline
+
+The repository includes a GitHub Actions workflow (.github/workflows/docker-ci.yml) that:
+- Builds Docker images for frontend and backend
+- Pushes them to Docker Hub
+- Deploys via Docker Compose
+You can view pipeline runs under the Actions tab in GitHub.
+
+
+
